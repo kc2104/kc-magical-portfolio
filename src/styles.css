@@ -4,7 +4,7 @@
 /* Cinematic reference homepage */
 nav{background:linear-gradient(180deg,#080b13d9,#080b1399);border:0;border-radius:0;top:0;width:100%;max-width:none;padding:18px 5vw;backdrop-filter:blur(10px)}
 .hero{min-height:100vh;text-align:left;display:flex;align-items:center;padding:120px 6vw 95px}
-.hero-bg{background:url('/kc-magical-portfolio/projects/hero-magic.svg') center/cover no-repeat;opacity:1}
+.hero-bg{background:url('/kc-magical-portfolio/projects/cinematic-reference.svg') center/cover no-repeat;opacity:1}
 .hero-vignette{position:absolute;inset:0;background:linear-gradient(90deg,#05070de8 0%,#05070d99 34%,#05070d20 68%),linear-gradient(0deg,#090b13 0%,transparent 20%,#090b1322 100%);z-index:1}
 .hero-copy{max-width:760px;margin-left:1vw;text-align:left;z-index:3}
 .hero h1{font-size:clamp(64px,7vw,118px);line-height:.82;letter-spacing:2px;color:var(--gold)}
@@ -74,10 +74,10 @@ nav{background:linear-gradient(180deg,#080b13d9,#080b1399);border:0;border-radiu
 @media(prefers-reduced-motion:reduce){.snow-layer i,.rain-layer,.lightning,.magic-dust,.magic-btn:after{animation:none}.weather-snow .snow-layer,.weather-storm .rain-layer{opacity:.25}}
 
 /* Theme-specific local artwork */
-.weather-snow .hero-bg{background-image:url('/kc-magical-portfolio/projects/snow-theme.svg');}
-.weather-storm .hero-bg{background-image:url('/kc-magical-portfolio/projects/storm-theme.svg');}
-.weather-arcane .hero-bg{background-image:url('/kc-magical-portfolio/projects/arcane-theme.svg');}
-.weather-off .hero-bg{background-image:url('/kc-magical-portfolio/projects/hero-magic.svg');}
+.weather-snow .hero-bg{background-image:url('/kc-magical-portfolio/projects/cinematic-reference.svg');}
+.weather-storm .hero-bg{background-image:url('/kc-magical-portfolio/projects/cinematic-reference.svg');}
+.weather-arcane .hero-bg{background-image:url('/kc-magical-portfolio/projects/cinematic-reference.svg');}
+.weather-off .hero-bg{background-image:url('/kc-magical-portfolio/projects/cinematic-reference.svg');}
 .weather-snow .hero-bg,.weather-storm .hero-bg,.weather-arcane .hero-bg,.weather-off .hero-bg{background-position:center;background-size:cover;background-repeat:no-repeat}
 .featured-card .featured-art:after,.card .art:after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 45%,#d4af3710 70%,#fff1 100%);pointer-events:none}
 .featured-card .featured-art img,.card .art img{filter:saturate(.88) contrast(1.08) brightness(.9)}
@@ -89,3 +89,12 @@ nav{background:linear-gradient(180deg,#080b13d9,#080b1399);border:0;border-radiu
 .weather-switcher button span{font-size:11px}
 .weather-switcher button:hover,.weather-switcher button.selected{background:#d4af3725;color:#f2d779!important;box-shadow:inset 0 0 0 1px #d4af3740}
 @media(max-width:800px){.weather-switcher{display:none}.tools .hamb{display:block!important}}
+
+/* Cinematic photographic reference treatment */
+.hero-bg{background-image:url('/kc-magical-portfolio/projects/cinematic-reference.svg')!important;background-position:center center!important;background-size:cover!important;opacity:1!important;filter:saturate(.92) contrast(1.04)}
+.weather-snow .hero-bg{filter:saturate(.9) contrast(1.05) brightness(.92)}
+.weather-storm .hero-bg{filter:saturate(.72) contrast(1.12) brightness(.65)}
+.weather-arcane .hero-bg{filter:saturate(1.08) contrast(1.05) brightness(.86)}
+.featured-card .featured-art img,.card .art img{object-fit:cover;filter:saturate(.9) contrast(1.08) brightness(.82);transition:transform .8s ease,filter .5s ease}
+.featured-card:hover .featured-art img,.card:hover .art img{filter:saturate(1.02) contrast(1.05) brightness(.98);transform:scale(1.07)}
+.hero-vignette{background:linear-gradient(90deg,#03050bdc 0%,#03050b7a 35%,#03050b08 72%),linear-gradient(0deg,#090b13 0%,transparent 25%,#090b1310 100%)}
