@@ -46,7 +46,7 @@ function App(){
 function Atmosphere({weather}){const flakes=Array.from({length:70},(_,i)=>i);return <div className={`atmosphere ${weather}`} aria-hidden="true"><div className="rain-layer"/><div className="snow-layer">{flakes.map(i=><i key={i} style={{'--i':i,'--x':`${(i*37)%100}%`,'--d':`${4+(i%7)}s`,'--s':`${2+(i%5)}px`,'--delay':`${-(i%9)}s`}}/> )}</div><div className="lightning l1"/><div className="lightning l2"/><div className="magic-dust"/></div>}
 function Nav({menu,setMenu,magic,setMagic,weather='off',cycleWeather=()=>{},onHome,detail=false}){return <nav><button className="brand" onClick={()=>onHome()}><strong>KC</strong><small>CREATIVE ALCHEMIST</small></button><div className={menu?'links open':'links'}>{['home','about','work','services','experience','skills','contact'].map(x=><button key={x} onClick={()=>onHome(x)}>{x}</button>)}</div><div className="tools"><button className="magic-btn" onClick={()=>{setMagic(true);cycleWeather()}}><Sparkles size={15}/> {weather==="snow"?"SNOW":weather==="storm"?"STORM":weather==="arcane"?"ARCANE":"MAGIC MODE"}</button><button className="hamb" onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</button></div></nav>}
 
-function ProjectPage({project,onHome,onProject,magic,setMagic,menu,setMenu}){
+function ProjectPage({project,onHome,onProject,magic,setMagic,menu,setMenu,weather='off',cycleWeather=()=>{}}){
  const related=projects.filter(p=>p.slug!==project.slug&&p.category===project.category).slice(0,2);
  const fallback=projects.filter(p=>p.slug!==project.slug&&!related.includes(p)).slice(0,2-related.length);
  const relatedAll=[...related,...fallback];
