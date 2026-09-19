@@ -27,7 +27,7 @@ function App(){
  if(loading)return <div className="loader"><div className="orbit">KC</div><b>CREATIVE ALCHEMIST</b><small>Design. Motion. Story. Magic.</small></div>;
  const cycleWeather=()=>setWeather(w=>w==='snow'?'storm':w==='storm'?'arcane':w==='arcane'?'off':'snow');
  const project=projects.find(p=>p.slug===route);
- if(route&&project)return <ProjectPage project={project} onHome={home} onProject={openProject} magic={magic} setMagic={setMagic} menu={menu} setMenu={setMenu}/>;
+ if(route&&project)return <ProjectPage project={project} onHome={home} onProject={openProject} magic={magic} setMagic={setMagic} menu={menu} setMenu={setMenu} weather={weather} cycleWeather={cycleWeather}/>;
  const shown=filter==='All'?projects:projects.filter(p=>p.category===filter);
  return <div className={(magic?'app magic ':'app ')+`weather-${weather}`}>
   <Atmosphere weather={weather}/>
