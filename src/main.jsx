@@ -3,6 +3,10 @@ import {createRoot} from 'react-dom/client';
 import {Menu,X,ArrowDown,Sparkles,ArrowUpRight,ArrowLeft,ExternalLink} from 'lucide-react';
 import './styles.css';
 
+const BASE=import.meta.env.BASE_URL.replace(/\/$/,'');
+const assetPath=x=>`${import.meta.env.BASE_URL}projects/${x}`;
+const getSlug=()=>window.location.pathname.split('/').filter(Boolean).pop()||null;
+
 const projects=[
  {slug:'aurora-identity',title:'Aurora Identity',category:'Branding',year:'2026',image:assetPath('aurora-identity.svg'),desc:'A premium visual identity study built around contrast, restraint and a luminous monogram.',client:'Concept Project',tools:['Adobe Illustrator','Brand Strategy','Art Direction'],overview:'A fictional identity exercise exploring how a small visual system can feel premium, memorable and adaptable across print and digital.',challenge:'Create a brand language that feels distinctive without becoming visually noisy.',direction:'A dark editorial foundation is paired with antique gold geometry, generous negative space and a single recognizable monogram.',process:['Research & mood direction','Identity sketching','Logo refinement','Mockup & presentation'],outcome:'A compact identity system designed to scale from a signature mark to a complete presentation.',gallery:[assetPath('aurora-identity.svg'),assetPath('visual-stories.svg')]},
  {slug:'glow-campaign',title:'Glow Campaign',category:'Social Media',year:'2026',image:assetPath('glow-campaign.svg'),desc:'A social campaign concept combining editorial typography, product storytelling and scroll-stopping composition.',client:'Concept Campaign',tools:['Social Strategy','Adobe Illustrator','Content Design'],overview:'A campaign system for a modern lifestyle brand, built to turn individual posts into one recognizable visual story.',challenge:'Make social content feel premium while keeping the message immediately understandable in a fast-moving feed.',direction:'Large type, warm contrast, device mockups and repeatable composition rules create a consistent campaign language.',process:['Campaign idea','Content pillars','Key visual','Post system'],outcome:'A reusable social framework that can expand into carousels, stories and short-form video.',gallery:[assetPath('glow-campaign.svg'),assetPath('care-beyond.svg')]},
@@ -15,10 +19,6 @@ const projects=[
 ];
 
 const cats=['All','Branding','Graphic Design','Social Media','Video','Motion','AI Creative'];
-const BASE=import.meta.env.BASE_URL.replace(/\/$/,'');
-const assetPath=x=>`${import.meta.env.BASE_URL}projects/${x}`;
-const getSlug=()=>window.location.pathname.split('/').filter(Boolean).pop()||null;
-
 function App(){
  const [loading,setLoading]=useState(true),[menu,setMenu]=useState(false),[filter,setFilter]=useState('All'),[magic,setMagic]=useState(false),[route,setRoute]=useState(getSlug());
  useEffect(()=>{const t=setTimeout(()=>setLoading(false),1400);const pop=()=>setRoute(getSlug());window.addEventListener('popstate',pop);return()=>{clearTimeout(t);window.removeEventListener('popstate',pop)}},[]);
