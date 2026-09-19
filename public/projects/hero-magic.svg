@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#050812"/><stop offset=".52" stop-color="#10192b"/><stop offset="1" stop-color="#05070d"/></linearGradient>
+ <radialGradient id="moon"><stop stop-color="#fff5cf"/><stop offset=".45" stop-color="#c7dcff"/><stop offset="1" stop-color="#5673a8" stop-opacity="0"/></radialGradient>
+ <radialGradient id="orb"><stop stop-color="#fff2b0"/><stop offset=".3" stop-color="#b88cff"/><stop offset="1" stop-color="#4c2d85" stop-opacity="0"/></radialGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7dc75"/><stop offset=".5" stop-color="#c89727"/><stop offset="1" stop-color="#fff0a6"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="14"/></filter>
+ <filter id="soft"><feGaussianBlur stdDeviation="3"/></filter>
+ <pattern id="dust" width="140" height="120" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="#f4d889" opacity=".5"/><circle cx="80" cy="75" r="1.2" fill="#fff" opacity=".25"/><circle cx="120" cy="40" r=".8" fill="#d4af37" opacity=".45"/></pattern>
+</defs>
+<rect width="1920" height="1080" fill="url(#bg)"/>
+<rect width="1920" height="1080" fill="url(#dust)" opacity=".35"/>
+<!-- gothic architecture -->
+<path d="M0 0h1920v1080H0z" fill="#000" opacity=".12"/>
+<path d="M150 930V250Q300 80 450 250v680M1470 930V250Q1620 80 1770 250v680" fill="#0b1020" stroke="#6e5222" stroke-opacity=".45" stroke-width="5"/>
+<path d="M600 900V300Q960 0 1320 300v600" fill="#0b1325" stroke="#b18a38" stroke-opacity=".45" stroke-width="7"/>
+<path d="M700 900V355Q960 80 1220 355v545" fill="#111b31" stroke="#5f7ea8" stroke-opacity=".5" stroke-width="4"/>
+<!-- moon -->
+<circle cx="960" cy="315" r="120" fill="url(#moon)" opacity=".85"/>
+<circle cx="960" cy="315" r="55" fill="#dce9ff" opacity=".7"/>
+<!-- castle -->
+<g fill="#101b31" stroke="#7f9ac1" stroke-opacity=".35">
+ <path d="M760 560v-150h45v-45h42v195zM842 560v-205h55v-55h40v260zM935 560v-270h50v-58h48v328zM1025 560v-230h55v-48h40v278zM1110 560v-180h50v-50h40v230z"/>
+ <path d="M780 410h45v-30h20v30h35M950 290h50v-32h20v32h35"/>
+</g>
+<!-- candle glow halos -->
+<g fill="#ffd875" opacity=".12" filter="url(#glow)">
+ <circle cx="310" cy="300" r="85"/><circle cx="510" cy="210" r="75"/><circle cx="1420" cy="240" r="90"/><circle cx="1600" cy="330" r="80"/><circle cx="720" cy="410" r="65"/><circle cx="1240" cy="410" r="65"/>
+</g>
+<!-- candles -->
+<g fill="#e8d7b5" stroke="#7f5c20">
+ <path d="M285 340h22l-4 150h-14zM495 255h20l-3 145h-14zM1405 290h24l-4 165h-16zM1585 390h22l-3 135h-15zM705 460h22l-4 140h-14zM1225 455h22l-4 145h-14z"/>
+</g>
+<g fill="#ffd96a">
+ <path d="M296 330q10-28 0-44q18 18 0 44M505 247q9-25 0-40q16 18 0 40M1417 282q11-28 0-45q18 20 0 45M1596 382q10-24 0-40q17 18 0 40M716 451q10-24 0-40q17 18 0 40M1236 447q10-25 0-42q18 18 0 42"/>
+</g>
+<!-- desk -->
+<path d="M520 850h1120l-80 230H600z" fill="#0a0d14" stroke="#9a742a" stroke-opacity=".5" stroke-width="5"/>
+<path d="M500 850h1180l-25 35H525z" fill="#3b2817"/>
+<!-- books -->
+<g stroke="#9c7428" stroke-width="3">
+ <path d="M610 760h300v55H610zM635 705h270v55H635zM665 650h240v55H665zM690 595h210v55H690z" fill="#15101a"/>
+</g>
+<g fill="#c9a84b" font-family="Georgia" font-size="22"><text x="680" y="685">IDEAS</text><text x="670" y="740">DESIGN</text><text x="650" y="795">MOTION</text></g>
+<!-- magical orb -->
+<circle cx="1030" cy="725" r="105" fill="url(#orb)" opacity=".5" filter="url(#glow)"/>
+<circle cx="1030" cy="725" r="68" fill="#111321" stroke="url(#gold)" stroke-width="5"/>
+<circle cx="1030" cy="725" r="47" fill="none" stroke="#d8b8ff" stroke-width="3" opacity=".8"/>
+<path d="M990 725q40-55 80 0q-40 55-80 0z" fill="none" stroke="#fff0b0" stroke-width="3"/>
+<circle cx="1030" cy="725" r="8" fill="#fff3ad"/>
+<!-- cat silhouette -->
+<g fill="#050609">
+ <path d="M1260 850q-30-110 10-205l38-55 35 38 45-38 35 62q55 160-20 198z"/>
+ <path d="M1300 640l5-70 38 35 45-35 5 70z"/>
+ <path d="M1360 835q100-70 130 20q-50-48-130 10z"/>
+</g>
+<!-- foreground frame -->
+<rect x="0" y="0" width="1920" height="1080" fill="none" stroke="#d4af37" stroke-opacity=".18" stroke-width="3"/>
+</svg>
