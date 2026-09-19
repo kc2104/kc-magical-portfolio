@@ -72,3 +72,14 @@ nav{background:linear-gradient(180deg,#080b13d9,#080b1399);border:0;border-radiu
 .magic-btn:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,#d4af3730,transparent);transform:translateX(-100%);animation:buttonShimmer 3s infinite}
 @keyframes buttonShimmer{55%,100%{transform:translateX(100%)}}
 @media(prefers-reduced-motion:reduce){.snow-layer i,.rain-layer,.lightning,.magic-dust,.magic-btn:after{animation:none}.weather-snow .snow-layer,.weather-storm .rain-layer{opacity:.25}}
+
+/* Theme-specific local artwork */
+.weather-snow .hero-bg{background-image:url('/kc-magical-portfolio/projects/snow-theme.svg');}
+.weather-storm .hero-bg{background-image:url('/kc-magical-portfolio/projects/storm-theme.svg');}
+.weather-arcane .hero-bg{background-image:url('/kc-magical-portfolio/projects/arcane-theme.svg');}
+.weather-off .hero-bg{background-image:url('/kc-magical-portfolio/projects/hero-magic.svg');}
+.weather-snow .hero-bg,.weather-storm .hero-bg,.weather-arcane .hero-bg,.weather-off .hero-bg{background-position:center;background-size:cover;background-repeat:no-repeat}
+.featured-card .featured-art:after,.card .art:after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 45%,#d4af3710 70%,#fff1 100%);pointer-events:none}
+.featured-card .featured-art img,.card .art img{filter:saturate(.88) contrast(1.08) brightness(.9)}
+.weather-storm .featured,.weather-storm .section{background-color:#070b14}
+.weather-arcane .featured,.weather-arcane .section{background-color:#0b0715}
