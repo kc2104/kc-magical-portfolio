@@ -45,3 +45,30 @@ nav{background:linear-gradient(180deg,#080b13d9,#080b1399);border:0;border-radiu
 @media(max-width:1100px){.featured-grid{grid-template-columns:repeat(4,1fr)}.values{grid-template-columns:repeat(2,1fr)}.values blockquote{text-align:left;grid-column:1/-1}}
 @media(max-width:800px){.hero{padding:125px 7vw 100px;min-height:92vh}.hero-copy{margin:0}.hero h1{font-size:15vw}.featured{padding-left:18px;padding-right:18px}.featured-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px}.featured-card{min-width:165px;scroll-snap-align:start}.values{grid-template-columns:1fr 1fr}.featured-head{align-items:flex-start;flex-direction:column}.text-link{padding:0}}
 @media(max-width:520px){.hero h2{font-size:34px}.hero-meta{font-size:11px;line-height:1.7}.values{grid-template-columns:1fr}.values blockquote{grid-column:auto}.featured-card{min-width:155px}}
+
+/* Living cinematic atmosphere */
+.atmosphere{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden;mix-blend-mode:screen}
+.atmosphere:after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,transparent 0 38%,#0008 100%);opacity:.7}
+.snow-layer{position:absolute;inset:-10% 0;opacity:0;transition:opacity .8s ease}
+.snow-layer i{position:absolute;left:var(--x);top:-8vh;width:var(--s);height:var(--s);border-radius:50%;background:#fff;box-shadow:0 0 8px #dbeeff,0 0 18px #fff8;opacity:.85;animation:snowfall var(--d) linear infinite;animation-delay:var(--delay);filter:blur(.2px)}
+.weather-snow .snow-layer{opacity:.9}
+@keyframes snowfall{0%{transform:translate3d(0,-10vh,0) rotate(0deg);opacity:0}10%{opacity:.9}50%{transform:translate3d(35px,55vh,0) rotate(180deg)}100%{transform:translate3d(-55px,115vh,0) rotate(360deg);opacity:.05}}
+.rain-layer{position:absolute;inset:-20% 0;opacity:0;background:repeating-linear-gradient(108deg,transparent 0 13px,#b9d8ff66 14px 15px,transparent 16px 31px);background-size:90px 110px;transform:skewX(-12deg);animation:rain .42s linear infinite}
+.weather-storm .rain-layer{opacity:.7}
+@keyframes rain{to{background-position:0 110px}}
+.lightning{position:absolute;inset:0;background:#d9e8ff;opacity:0;mix-blend-mode:screen}
+.weather-storm .lightning{animation:stormFlash 7s infinite}
+.lightning.l2{animation-delay:3.8s}
+@keyframes stormFlash{0%,91%,100%{opacity:0}92%{opacity:.14}92.5%{opacity:.02}93%{opacity:.38}93.35%{opacity:0}94%{opacity:.12}94.25%{opacity:0}}
+.weather-storm .hero-bg{filter:saturate(.78) brightness(.72) contrast(1.08)}
+.weather-storm .hero:before{content:'';position:absolute;z-index:2;inset:0;background:radial-gradient(circle at 74% 26%,#cfe5ff33,transparent 18%);animation:stormGlow 7s infinite}
+@keyframes stormGlow{0%,91%,100%{opacity:0}93%{opacity:1}94%{opacity:.1}}
+.magic-dust{position:absolute;inset:0;background-image:radial-gradient(circle,#d4af37 1px,transparent 1.5px);background-size:130px 130px;opacity:0;animation:dustDrift 18s linear infinite}
+.weather-arcane .magic-dust{opacity:.25}
+@keyframes dustDrift{to{background-position:130px -130px}}
+.weather-arcane .hero-bg{filter:saturate(1.2) brightness(1.05)}
+.weather-off .atmosphere{display:none}
+.magic-btn{position:relative;overflow:hidden}
+.magic-btn:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,#d4af3730,transparent);transform:translateX(-100%);animation:buttonShimmer 3s infinite}
+@keyframes buttonShimmer{55%,100%{transform:translateX(100%)}}
+@media(prefers-reduced-motion:reduce){.snow-layer i,.rain-layer,.lightning,.magic-dust,.magic-btn:after{animation:none}.weather-snow .snow-layer,.weather-storm .rain-layer{opacity:.25}}
