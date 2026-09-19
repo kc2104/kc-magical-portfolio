@@ -32,7 +32,30 @@ function App(){
  return <div className={(magic?'app magic ':'app ')+`weather-${weather}`}>
   <Atmosphere weather={weather}/>
   <Nav menu={menu} setMenu={setMenu} magic={magic} setMagic={setMagic} weather={weather} setWeather={setWeather} cycleWeather={cycleWeather} onHome={home}/>
-  <section id="home" className="hero"><div className="hero-bg"/><div className="hero-vignette"/><div className="hero-copy"><p className="eyebrow">WELCOME TO MY CREATIVE REALM</p><h1>KRUNAL <i>CHAUHAN</i></h1><p className="hero-role">KC — CREATIVE ALCHEMIST</p><h2>I Turn Ideas Into<br/><span>Visual Experiences.</span></h2><p className="hero-meta">Graphic Designer · Content Creator · Video Editor · AI Prompt Maker</p><div className="actions"><button className="gold" onClick={()=>home('work')}>ENTER MY PORTFOLIO <ArrowDown size={15}/></button><button className="outline" onClick={()=>home('contact')}>CONTACT ME</button></div><p className="tagline">“Where Creativity Becomes Magic.”</p></div><div className="scroll-cue">SCROLL TO EXPLORE <ArrowDown size={13}/></div></section>
+  <section id="home" className="hero">
+   <div className="hero-ambient"><div className="hero-glow glow-one"/><div className="hero-glow glow-two"/><div className="hero-haze"/></div>
+   <div className="hero-grid"/>
+   <div className="hero-copy">
+    <div className="hero-kicker"><span>KC</span><b/> CREATIVE ALCHEMIST <em>01 / 07</em></div>
+    <h1>KRUNAL<br/><i>CHAUHAN</i></h1>
+    <div className="hero-rule"><span>DESIGN</span><b/><span>MOTION</span><b/><span>STORY</span></div>
+    <h2>I turn ideas into <span>visual experiences.</span></h2>
+    <p className="hero-meta">Graphic Designer · Content Creator · Video Editor · AI Prompt Maker</p>
+    <div className="actions"><button className="gold" onClick={()=>home('work')}>EXPLORE THE WORK <ArrowDown size={15}/></button><button className="outline" onClick={()=>home('contact')}>START A PROJECT</button></div>
+    <p className="tagline">“Where creativity becomes magic.”</p>
+   </div>
+   <div className="hero-visual" aria-hidden="true">
+    <div className="visual-orbit orbit-a"/><div className="visual-orbit orbit-b"/>
+    <div className="visual-frame">
+      <div className="visual-image"/>
+      <div className="visual-shade"/>
+      <div className="visual-spark spark-a">✦</div><div className="visual-spark spark-b">✦</div>
+      <div className="visual-label"><span>CREATIVE REALM</span><b>VOL. 01</b></div>
+    </div>
+    <div className="visual-caption">ART DIRECTION / VISUAL STORYTELLING</div>
+   </div>
+   <div className="hero-bottom"><span>SCROLL TO EXPLORE</span><b/><small>07.02.1998 — KC</small></div>
+  </section>
   <Section id="about" eyebrow="THE WIZARD BEHIND THE WORK" title={<>Creative thinking,<br/><i>visual alchemy.</i></>}><div className="about"><div className="portrait"><span>KC</span><small>CREATIVE ALCHEMIST</small></div><div><p className="lead">I'm Krunal Chauhan — a creative professional working across graphic design, social media, video editing, branding, and AI-powered creative workflows.</p><p className="muted">I combine design thinking, visual storytelling, and emerging AI tools to turn ideas into engaging digital experiences.</p><div className="chips"><span>Creative Designer</span><span>Content Creator</span><span>Video Editor</span><span>AI Prompt Maker</span></div></div></div></Section>
   <section className="featured section"><div className="featured-head"><div><p className="eyebrow">THE ARCHIVES</p><h2 className="title">Featured <i>Work.</i></h2></div><button className="text-link" onClick={()=>home('work')}>VIEW ALL PROJECTS <ArrowUpRight size={15}/></button></div><p className="featured-intro">A collection of visual experiments, campaigns, and creative work.</p><div className="featured-grid">{projects.map((p,i)=><article className="featured-card" key={p.slug} onClick={()=>openProject(p)}><div className="featured-art"><img src={p.image} alt={p.title}/><span>0{i+1}</span></div><div className="featured-info"><small>{p.category}</small><h3>{p.title}</h3><span>{p.year}<ArrowUpRight size={13}/></span></div></article>)}</div><div className="values"><div><b>✦</b><strong>DESIGN</strong><span>Ideas into identity.</span></div><div><b>○</b><strong>CREATE</strong><span>Concepts into content.</span></div><div><b>△</b><strong>COLLABORATE</strong><span>Visions into reality.</span></div><div><b>∞</b><strong>INSPIRE</strong><span>Creativity without limits.</span></div><blockquote>“Design is a different kind of magic.”<small>— KC</small></blockquote></div></section>\n  <Section id="work" eyebrow="THE ARCHIVES" title={<>Selected <i>work.</i></>}><div className="archive-head"><p className="muted">Temporary concept projects are installed for now. Replace each cover with your real work later without changing the case-study structure.</p><div className="filters">{cats.map(x=><button className={filter===x?'active':''} onClick={()=>setFilter(x)} key={x}>{x}</button>)}</div></div><div className="grid">{shown.map(p=><article className="card" key={p.title} onClick={()=>openProject(p)}><div className="art"><img src={p.image} alt={p.title}/><span>0{projects.indexOf(p)+1}</span><b>{p.category}</b></div><div className="card-copy"><div><h3>{p.title}</h3><p>{p.desc}</p></div><button aria-label={'Open '+p.title} onClick={e=>{e.stopPropagation();openProject(p)}}><ArrowUpRight size={18}/></button></div><small className="year">{p.year}</small></article>)}</div></Section>
   <Section id="services" eyebrow="THE SPELLBOOK" title={<>Creative <i>services.</i></>}><div className="grid services">{['Graphic Design','Branding','Social Media','Video Editing','Motion Graphics','AI Creative'].map((x,i)=><article className="service" key={x}><small>0{i+1}</small><h3>{x}</h3><p className="muted">Creative services for brands that want to stand out through strong visual communication.</p></article>)}</div></Section>
